@@ -46,6 +46,7 @@ def get_news():
                     print(f"Headline: {headline}\nCategory: {category}\nSummary: {summary}\nPublish Time: {publish_time}\nMore Info: {more_info}\n\n")
 
 
+
 def main():
     get_news()
 
