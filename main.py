@@ -39,7 +39,6 @@ def get_news():
         if "https://www.theguardian.com" not in more_info:
             more_info = f"https://www.theguardian.com{more_info}"
 
-
         if headline != 'N/A':
             if summary != 'N/A':
                 if publish_time != 'N/A':
