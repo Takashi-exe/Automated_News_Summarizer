@@ -25,7 +25,7 @@ def get_news():
     news_list = soup.find_all('div', class_='dcr-1555ajk')  # , id = "container-news")
 
     for news in news_list:
-        headline = catch_error(news, 'span', 'show-underline dcr-uyefka')
+        title = catch_error(news, 'span', 'show-underline dcr-uyefka')
 
 
         # category = news.find('div', class_="dcr-1cc5b8d").text
@@ -39,10 +39,10 @@ def get_news():
         if "https://www.theguardian.com" not in more_info:
             more_info = f"https://www.theguardian.com{more_info}"
 
-        if headline != 'N/A':
+        if title != 'N/A':
             if summary != 'N/A':
                 if publish_time != 'N/A':
-                    print(f"Headline: {headline}\nCategory: {category}\nSummary: {summary}\nPublish Time: {publish_time}\nMore Info: {more_info}\n\n")
+                    print(f"Headline: {title}\nCategory: {category}\nSummary: {summary}\nPublish Time: {publish_time}\nMore Info: {more_info}\n\n")
 
 
 
