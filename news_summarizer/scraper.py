@@ -32,14 +32,25 @@ def get_news():
         if title != 'N/A':
             if summary != 'N/A':
                 if publish_time != 'N/A':
-                    print(f"Headline: {title}\nCategory: {category}\nSummary: {summary}\nPublish Time: {publish_time}\nMore Info: {more_info}\n\n")
+                    content = f"{category}, {publish_time}: {summary}\n{more_info}\n\n"
+                    msg = f"{title}\n\t{content}\n"
+                    news_data.append(msg)
+
+
+def compile_message():
+    body = "Here are some of the latest news for you:\n\n" # Initialise message body
+    # Iterate through news_data to append to message body
+    for i in range(len(news_data)):
+        body += (news_data[i])
+
+    return body #Return compiled message
 
 
 
 def main():
-    get_news()
+    get_news() # Fetch news articles
+    subject = f"Trending News Today\n" # Define email subject
+    text = compile_message() # Compile news message
+    return subject, text
 
-
-if __name__ == '__main__':
-    main()
-
+subject, text = main()
